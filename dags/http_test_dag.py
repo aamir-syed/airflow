@@ -1,7 +1,7 @@
 import json
 
 from airflow import DAG
-from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.providers.http.operators.http import HttpOperator
 from airflow.providers.http.sensors.http import HttpSensor
 from datetime import datetime
 
@@ -24,7 +24,7 @@ with DAG(
     )
 
     # Define the HTTP Operator task
-    put_json_task = SimpleHttpOperator(
+    put_json_task = HttpOperator(
         task_id='put_json',
         http_conn_id='API-user_dyn_LhHCeBM13kCWcVD4F0T1IA',  # Use the provided connection ID
         method='PUT',
