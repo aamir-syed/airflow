@@ -4,7 +4,8 @@ from airflow.utils.dates import days_ago
 from airflow.configuration import conf
 
 # Fetch the max parallel tasks from Airflow config
-MAX_PARALLEL_TASKS = int(conf.get('core', 'max_active_tasks_per_dag', fallback=116))
+# MAX_PARALLEL_TASKS = int(conf.get('core', 'max_active_tasks_per_dag', fallback=116))
+MAX_PARALLEL_TASKS = 100
 print(MAX_PARALLEL_TASKS)
 
 # Define the DAG
