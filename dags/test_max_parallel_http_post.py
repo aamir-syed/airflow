@@ -27,7 +27,9 @@ with DAG(
             method="POST",
             headers={"Content-Type": "application/json"},
             data='{"param": "value"}',
+            tcp_keep_alive=True,
             log_response=True,
+            response_check=lambda response: True, #always pass, just for testing.
         ) for i in range(MAX_PARALLEL_TASKS)
     ]
 
