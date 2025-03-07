@@ -15,8 +15,7 @@ with DAG(
     schedule_interval=None,
     start_date=days_ago(1),
     catchup=False,
-    # max_active_tasks=25,  # Max parallel tasks allowed
-    max_active_tis_per_dag=5,  # Limits max parallel running task instances
+    max_active_tasks=25,  # Max parallel tasks allowed
 ) as dag:
     
     # Create multiple parallel HTTP tasks
@@ -31,6 +30,7 @@ with DAG(
             tcp_keep_alive=True,
             log_response=True,
             response_check=lambda response: True, #always pass, just for testing.
+            max_active_tis_per_dag=16
         ) for i in range(MAX_PARALLEL_TASKS)
     ]
 
