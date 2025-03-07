@@ -19,7 +19,6 @@ with DAG(
     start_date=days_ago(1),
     catchup=False,
     max_active_tasks=MAX_PARALLEL_TASKS,  # Control parallel execution
-    max_active_tis_per_dag=MAX_PARALLEL_TASKS,  # Limit concurrent task instances
 ) as dag:
 
     # Create multiple HTTP POST tasks in parallel
