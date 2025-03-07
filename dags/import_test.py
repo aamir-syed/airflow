@@ -15,7 +15,7 @@ with DAG(
         http_task = HttpOperator(
             task_id=f'http_post_task_{i}',
             http_conn_id='http_default', #ensure you have a connection setup in airflow.
-            endpoint='your_test_endpoint', #replace with your test endpoint.
+            endpoint='neomdev_test_endpoint', #replace with your test endpoint.
             method='POST',
             data={'task_id': i},
             headers={'Content-Type': 'application/json'},
