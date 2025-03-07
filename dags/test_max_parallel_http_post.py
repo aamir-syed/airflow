@@ -31,7 +31,7 @@ with DAG(
             headers=HEADERS,
             data=f'{{"task_id": "task_{i}", "message": "Hello from Task {i}"}}',
             tcp_keep_alive=True,
-            log_response=False,
+            log_response=True,
         ) for i in range(MAX_PARALLEL_TASKS)
     ]
 
