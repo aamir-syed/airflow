@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.providers.http.operators.http import HttpOperator
 from airflow.utils.dates import days_ago
 from airflow.configuration import conf
 
@@ -24,7 +24,7 @@ with DAG(
 
     # Create multiple HTTP POST tasks in parallel
     tasks = [
-        SimpleHttpOperator(
+        HttpOperator(
             task_id=f"post_request_{i}",
             http_conn_id=HTTP_CONN_ID,
             endpoint=API_ENDPOINT,
