@@ -15,7 +15,6 @@ with DAG(
     schedule_interval=None,
     start_date=days_ago(1),
     catchup=False,
-    max_active_tasks=25,  # Max parallel tasks allowed
     max_active_tis_per_dag=25, # Setting the maximum active task instances
 ) as dag:
     
