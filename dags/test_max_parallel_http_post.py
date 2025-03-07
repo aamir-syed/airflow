@@ -30,7 +30,7 @@ with DAG(
             tcp_keep_alive=True,
             log_response=True,
             response_check=lambda response: True, #always pass, just for testing.
-            max_active_tis_per_dag=16
+            max_active_tis_per_dag=25
         ) for i in range(MAX_PARALLEL_TASKS)
     ]
 
