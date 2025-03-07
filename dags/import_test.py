@@ -14,8 +14,8 @@ with DAG(
     for i in range(50):  # Creating 50 parallel tasks
         http_task = HttpOperator(
             task_id=f'http_post_task_{i}',
-            http_conn_id='http_default', #ensure you have a connection setup in airflow.
-            endpoint='neomdev_test_endpoint', #replace with your test endpoint.
+            http_conn_id='neomdev_test_endpoint', #ensure you have a connection setup in airflow.
+            endpoint='',
             method='POST',
             data={'task_id': i},
             headers={'Content-Type': 'application/json'},
