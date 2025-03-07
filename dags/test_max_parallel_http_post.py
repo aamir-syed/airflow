@@ -15,7 +15,7 @@ with DAG(
     schedule_interval=None,
     start_date=days_ago(1),
     catchup=False,
-    max_active_tasks=MAX_PARALLEL_TASKS,  # Max parallel tasks allowed
+    max_active_tasks=25,  # Max parallel tasks allowed
 ) as dag:
     
     # Create multiple parallel HTTP tasks
