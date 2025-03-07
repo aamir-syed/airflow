@@ -5,6 +5,7 @@ from airflow.configuration import conf
 
 # Fetch the max parallel tasks from Airflow config
 MAX_PARALLEL_TASKS = int(conf.get('core', 'max_active_tasks_per_dag', fallback=16))
+print(MAX_PARALLEL_TASKS)
 
 # Define the DAG
 with DAG(
