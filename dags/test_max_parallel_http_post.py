@@ -30,6 +30,7 @@ with DAG(
             method="POST",
             headers=HEADERS,
             data=f'{{"task_id": "task_{i}", "message": "Hello from Task {i}"}}',
+            tcp_keep_alive=True,
             log_response=False,
         ) for i in range(MAX_PARALLEL_TASKS)
     ]
